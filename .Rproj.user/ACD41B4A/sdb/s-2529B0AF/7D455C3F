@@ -1,0 +1,18 @@
+{
+    "contents" : "# 1.Merges the training and the test sets to create one data set.\n#Reading data\ntrainData <- read.table(\"./train/X_train.txt\")\ntrainActivityLabels <- read.table(\"./train/y_train.txt\")\ntrainSubjects <- read.table(\"./train/subject_train.txt\")\n\ntestData <- read.table(\"./test/X_test.txt\")\ntestActivityLabels <- read.table(\"./test/y_test.txt\")\ntestSubjects <- read.table(\"./test/subject_test.txt\")\n#Merging data\nmergedData <- rbind(trainData, testData)\nmergedActivityLabels <- rbind(trainActivityLabels, testActivityLabels)\nmergedSubject <- rbind(trainSubjects, testSubjects)\n# 2.Extracts only the measurements on the mean and standard deviation for each measurement. \n\n# 3.Uses descriptive activity names to name the activities in the data set\n# 4.Appropriately labels the data set with descriptive variable names. \n# 5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.\n# Please upload your data set as a txt file created with write.table() using row.name=FALSE\n# data <- read.table(file_path, header = TRUE) ",
+    "created" : 1445449561257.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2277584047",
+    "id" : "7D455C3F",
+    "lastKnownWriteTime" : 1445455852,
+    "path" : "D:/Dropbox/Dropbox/Coursera - Data Science/3round/Course Project/Coursera Getting and Cleaning Data course project/run_analysis.R",
+    "project_path" : "run_analysis.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
