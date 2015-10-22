@@ -1,8 +1,10 @@
+#Steps as required
 # 1.Merges the training and the test sets to create one data set.
 #Reading data
 trainData <- read.table("./train/X_train.txt")
 trainActivityLabels <- read.table("./train/y_train.txt")
 trainSubjects <- read.table("./train/subject_train.txt")
+
 testData <- read.table("./test/X_test.txt")
 testActivityLabels <- read.table("./test/y_test.txt")
 testSubjects <- read.table("./test/subject_test.txt")
