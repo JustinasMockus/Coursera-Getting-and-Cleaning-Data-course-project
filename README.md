@@ -1,22 +1,19 @@
----
-title: "README"
-author: "Justinas Mockus"
-date: "2015 m. spalis 21 d."
-output: html_document
----
+# Getting and Cleaning Data
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Course Project
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+**Script has to do the following:**
 
-```{r}
-summary(cars)
-```
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive variable names. 
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-You can also embed plots, for example:
+The dataset being used is: [Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
-```{r, echo=FALSE}
-plot(cars)
-```
+## Steps to work on this course project
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+1. Download the data source and put into a folder on your local drive. You'll have a ```UCI HAR Dataset``` folder.
+2. Put ```run_analysis.R``` in the parent folder of ```UCI HAR Dataset```, then set it as your working directory using ```setwd()``` function in RStudio.
+3. Run ```source("run_analysis.R")```, then it will generate a new file ```tiny_data.txt``` in your working directory.
