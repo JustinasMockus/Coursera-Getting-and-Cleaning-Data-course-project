@@ -1,35 +1,34 @@
----
-title: "CodeBook"
-author: "Justinas Mockus"
-date: "2015 m. spalis 21 d."
-output: html_document
----
+# Introduction
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+The script `run_analysis.R`
+- downloads the data from
+  [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/index.html).
+- merges the training and test sets to create one data set.
+- appropriately labels the columns with descriptive names.
+- extracts only the measurements (features) on the mean and standard deviation
+  for each measurement.
+- replaces `Activity` values in the dataset with descriptive activity names.
+- creates a second tidy dataset with an average of each variable.
+  for each activity and each subject.Then tidy data.
+  set is also exported as txt file.
+  
+# Variables
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+* `TrainData`, `TrainActivity`, `TestData`, `TestActivity`, `TrainSubjects` and `TestSubjects` contain the data from the downloaded files.
+* `TrainDataSet`, `TestDataSet` are merged to `CombinedDataSet` for further analysis.
+* `FeatureNames` contains the correct names for the `TrainData` dataset.
+* `MeanStdColumns` variable is used to extract columns which contain mean and standart deviation.
+* `MeanStdDataSet` are created from variables `SubjectID`,`ActivityID`, `MeanStdColumns`.
+* `ActivityLabels` contains activity labels and is used to add labels to `MeanStdDataSet` data frame.
+* `TidyMelt` contains data after melt function.
+* `TidyData` is a final data set of tidy data.
 
-```{r}
-summary(cars)
-```
+# Transformation details
 
-You can also embed plots, for example:
+There are 5 parts:
 
-```{r, echo=FALSE}
-plot(cars)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-------------------------------
-sample codebook.
-
-It's very similar to a Statistical Analysis Plan, actually.
-
-Setup, there is a dogwalking business. It wants to analyze its work.
-
-Raw data is: name of dog, address of owner, time walked, date walked, size of dog (small, medium, or large), health of dog (well or sick) on that date and time, comments, and pay.
-
-The business wants to assign ID# to the dogs, and codewords to the address to make this data anonymous. There isn't anything to do to the comments--since free text is all over the place.
-
-Codebook: The dog's name was transformed into an IDNumber (unique) (1-50), the address was transformed into a factor, OwnerName (levels Alice, Bob, Charlie, Deborah, Ernest and Fred), time and date walked were counted to make WalksPerWeek1, WalksPerWeek2, and WalksPerWeek3. Week1 begins at 00:01UTC on July1, 2014, Week2 begins at 00:01UTC on July8, 2014, Week3 begins at 00:01UTC on July15, 2014. Health was summarized as HealthWeek1, HealthWeek2, and HealthWeek3. It is a factor with two levels, Well and Sick. If the dog was sick at any walk during that week, dog was marked sick, else dog was marked well. Dog Size was converted into a factor: Large, Medium and Small are the levels. Comments are dropped. Pay is transformed into PayWeek1, PayWeek2, PayWeek3, which is a factor that has two levels (Yes, and No) for correct pay paid during that week.
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement.
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive activity names.
+5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
